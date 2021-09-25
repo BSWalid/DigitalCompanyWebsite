@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import './App.css';
 import Header from './Components/Header'
 import OurServices from './Components/OurServices'
+import OurValues from './Components/OurValues'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -19,6 +20,7 @@ function App() {
     <div className="App">
     <Header/>
     <OurServices/>
+    <OurValues/>
 
      {/*  <Members/>
       <OurPorject/>
