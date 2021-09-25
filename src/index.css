@@ -1,3 +1,13 @@
+*{
+  margin: 0;
+  padding: 0;
+
+}
+
+html{
+/*   scroll-snap-type: mandatory;
+  scroll-snap-type: y mandatory; */
+}
 body {
   margin: 0;
   padding: 0;

@@ -1,7 +1,10 @@
 import styled  from "styled-components"
             
-export const HeaderWrapper = styled.div`
+export const HeaderWrapper = styled.section`
+
     position: relative;
+    scroll-snap-align: end;
+
     height: 800px;
     
     

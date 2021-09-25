@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import './App.css';
 import Header from './Components/Header'
-import HeroSection from './Components/HeroSection'
+import OurServices from './Components/OurServices'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -18,11 +18,9 @@ function App() {
   return (
     <div className="App">
     <Header/>
-     {/*  <HeroSection/>
+    <OurServices/>
 
-      
-     <OurServices/>
-      <Members/>
+     {/*  <Members/>
       <OurPorject/>
       <ContactUs/> */}
      
