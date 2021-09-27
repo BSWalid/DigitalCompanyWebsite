@@ -2,6 +2,10 @@ import styled from 'styled-components';
 import './App.css';
 import Header from './Components/Header'
 import OurServices from './Components/OurServices'
+import Members from './Components/Members'
+
+
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -20,8 +24,8 @@ function App() {
     <Header/>
     <OurServices/>
 
-     {/*  <Members/>
-      <OurPorject/>
+      <Members/>
+       {/* <OurPorject/>
       <ContactUs/> */}
      
     </div>

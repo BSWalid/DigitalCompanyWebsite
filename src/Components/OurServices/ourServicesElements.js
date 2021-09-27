@@ -6,8 +6,8 @@ export const OurServicesWrapper = styled.section`
     position: relative;
     height: calc(100vh - 80px);;
     scroll-snap-align: end;
+    margin-bottom:100px;
 
-    margin-bottom: 1000px;
     width: 100%;
     background-color:#2D55B6 ;
     text-align: center;
@@ -77,12 +77,16 @@ export const ServiceImageWrapper = styled.div`
 
 `
 export const ServiceContent = styled.div`
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    transform: ${props => (props.currentslide ? "translateX(0%)":"translateX(250%)")};
-    transition: transform 0.8s ease-in;  
-    background-color: ${props => props.color };;;
+z-index: 100;
+height: 400px;
+width: 400;
+
+
+
+background-color: ${props => props.color };
+
+
+
 
 
 `

@@ -1,57 +1,43 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 
-import { Container } from 'react-bootstrap'
-import {services,dotsVersions} from './Data'
+import {services} from './Data'
 import {ServiceContent,OurServicesWrapper,OurServiceTitle,Indicator,Dot,
         TitleWraper,IndicatorWrapper,ServiceImageWrapper} from './ourServicesElements'
 
+import Slider from "react-slick";
+
+
+import 'pure-react-carousel/dist/react-carousel.es.css';
+import './styles.css'
+
+
 const Index = () => {
+
+ 
+
+    const settings = {
+        fade: true,
+        infinite: true,
+        speed: 500,
+        autoplay: true,
+        speed: 2000,
+        autoplaySpeed: 3000,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        pauseOnHover: true
+
+      };
+    
+
      
-     const [dots, setdots] = useState([
-        {
-            id:0,
-            position:"-150%",
-            color:"red"
-        },
-        {
-            id:2,
-            position:"10%",
-            color:"blue"
-        },
-        {
-            id:3,
-            position:"15%",
-            color:"green"
-        },
-        {
-            id:4,
-            position:"50%",
-            color:"grey"
-        },
-        {
-            id:5,
-            position:"120%",
-            color:"black"
-        },
-    ])
-     
-    const [currentSlide, setcurrentSlide] = useState(0)
-    const incremantCurrentSlide = ()=>{
+        const [currentSlide, setcurrentSlide] = useState(0)
+        const incremantCurrentSlide = ()=>{
         currentSlide == services.length-1 ?  setcurrentSlide(0) :  setcurrentSlide(currentSlide+1) 
         
     }
 
-    const [dotPos, setdotPos] = useState(0)
-    
-    const handleDotsPosition = ()=>{
-        dotPos == dots.length-1 ?  setdotPos(0) :  setdotPos(dotPos+1) 
-
-        
-        setdots(dotsVersions[dotPos])
-
-
-
-    }
+   
+     
 
    
 
@@ -59,45 +45,69 @@ const Index = () => {
         <>
             <OurServicesWrapper>
                 <TitleWraper>
-                    <OurServiceTitle>Our Services</OurServiceTitle>
+                    <OurServiceTitle >Our Services</OurServiceTitle>
                 </TitleWraper>
-            <IndicatorWrapper>
+            <IndicatorWrapper >
+
                 <Indicator>
              
                 </Indicator>
 
-               
-
-                { dots.map((dot ,index)=>{
-                
-                    return <Dot key={index} color ={dot.color} top={dot.position}></Dot>
+                <Dot top="20%" color="red"></Dot>
+                <Dot top="20%" color="red"></Dot>
+                <Dot top="20%" color="red"></Dot>
                        
-            })}
-
-
-                      
-               
 
             </IndicatorWrapper>
 
+           
             <ServiceImageWrapper>
 
-            { services.map((service ,index)=>{
-                console.log("this is index"+index)
-                console.log("current"+currentSlide)
-                
+                       
 
-                return <ServiceContent currentslide= {index == currentSlide?true:false} key={service.id} color={service.color}></ServiceContent>
-                 
+        {/*     <CarouselProvider
+                    naturalSlideWidth={500}
+                    naturalSlideHeight={600}
+                    totalSlides={services.length}
+                    interval={4000}
+                    isPlaying={true}
+                    infinite={true}
+                    tag={'div'}
+                >
+                    <Slider classNameAnimation={animation} >
+                    { services.map((service ,index)=>{
+                            console.log("this is index"+index)
+                            console.log("current"+currentSlide)
+                            
+                            return <Slide index={0}><ServiceContent  key={service.id} color={service.color}></ServiceContent></Slide>
+                            
 
-            })}
+                        })}
+                    </Slider>
+                    
+                </CarouselProvider>      */}
+                    <Slider {...settings}>
+                    { services.map((service ,index)=>{
+                         
+                            
+                         return  <ServiceContent  key={service.id} color={service.color}></ServiceContent> 
+                            
+
+                     })}
+
+                    </Slider>  
+
+
+
+              
+    
 
             </ServiceImageWrapper>
-                    
-                    
-            <button onClick={incremantCurrentSlide }> click me </button>
-            <button onClick={handleDotsPosition }> click me </button>
+                               
+            <button onClick={ incremantCurrentSlide }> click me </button>
 
+
+                           
 
             </OurServicesWrapper>
         </>
