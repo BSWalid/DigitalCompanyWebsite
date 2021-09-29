@@ -1,8 +1,10 @@
 import React, { useState,useEffect } from 'react'
 
 import {services} from './Data'
-import {ServiceContent,OurServicesWrapper,OurServiceTitle,Indicator,Dot,
-        TitleWraper,IndicatorWrapper,ServiceImageWrapper} from './ourServicesElements'
+import {ServiceContent,OurServicesWrapper,OurServiceTitle,
+        ServiceImageWrapper, ServiceContentWrapper, ServiceDescriptionWrapper, ServiceDesceiption,} from './ourServicesElements'
+
+        
 
 import Slider from "react-slick";
 
@@ -16,25 +18,34 @@ const Index = () => {
  
 
     const settings = {
-        fade: true,
+        fade:true,
         infinite: true,
+        autoplay:true,
+        
         speed: 500,
-        autoplay: true,
-        speed: 2000,
-        autoplaySpeed: 3000,
+        pauseOnFocus:true,
+        autoplaySpeed: 1000,
         slidesToShow: 1,
         slidesToScroll: 1,
-        pauseOnHover: true
+        arrows:false,
+        
+
+      };
+      const settings2 = {
+        fade:true,
+        infinite: true,
+        autoplay:true,
+        speed: 500,
+        autoplaySpeed: 3000,
+        
+        
 
       };
     
-
+        const [nav1, setNav1] = useState();
+        const [nav2, setNav2] = useState();
      
-        const [currentSlide, setcurrentSlide] = useState(0)
-        const incremantCurrentSlide = ()=>{
-        currentSlide == services.length-1 ?  setcurrentSlide(0) :  setcurrentSlide(currentSlide+1) 
         
-    }
 
    
      
@@ -44,67 +55,34 @@ const Index = () => {
     return (
         <>
             <OurServicesWrapper>
-                <TitleWraper>
                     <OurServiceTitle >Our Services</OurServiceTitle>
-                </TitleWraper>
-            <IndicatorWrapper >
+                         <ServiceContentWrapper >
+                            {/* <ServiceDescriptionWrapper>
+                                <Slider {...settings} >
+                                    { services.map((service ,index)=>{
+                                        return <ServiceDescriptionWrapper  key={service.id} color={service.color}><p>{service.description}</p></ServiceDescriptionWrapper>   
+                                    })}
+                                </Slider> 
+                            </ServiceDescriptionWrapper> */} 
+                        <ServiceImageWrapper>
 
-                <Indicator>
-             
-                </Indicator>
+                                <Slider {...settings}> 
 
-                <Dot top="20%" color="red"></Dot>
-                <Dot top="20%" color="red"></Dot>
-                <Dot top="20%" color="red"></Dot>
-                       
+                                    {services.map((service)=>{
 
-            </IndicatorWrapper>
-
-           
-            <ServiceImageWrapper>
-
-                       
-
-        {/*     <CarouselProvider
-                    naturalSlideWidth={500}
-                    naturalSlideHeight={600}
-                    totalSlides={services.length}
-                    interval={4000}
-                    isPlaying={true}
-                    infinite={true}
-                    tag={'div'}
-                >
-                    <Slider classNameAnimation={animation} >
-                    { services.map((service ,index)=>{
-                            console.log("this is index"+index)
-                            console.log("current"+currentSlide)
+                                        return <ServiceContent  key={service.id} color={service.color}></ServiceContent>
+                                        })}
                             
-                            return <Slide index={0}><ServiceContent  key={service.id} color={service.color}></ServiceContent></Slide>
-                            
-
-                        })}
-                    </Slider>
+                                </Slider>                           
+                        </ServiceImageWrapper>      
+                           
                     
-                </CarouselProvider>      */}
-                    <Slider {...settings}>
-                    { services.map((service ,index)=>{
-                         
-                            
-                         return  <ServiceContent  key={service.id} color={service.color}></ServiceContent> 
-                            
 
-                     })}
-
-                    </Slider>  
-
-
-
-              
-    
-
-            </ServiceImageWrapper>
+                    
+                    </ServiceContentWrapper> 
+           
+                
                                
-            <button onClick={ incremantCurrentSlide }> click me </button>
 
 
                            

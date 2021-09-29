@@ -1,15 +1,21 @@
 export const services = [
     {   id:"1",
-        color:"red"
+        color:"red",
+        description:"this is slide red"
     },
     {   id:"3",
-        color:"blue"
+        color:"blue",
+        description:"this is slide blue",
+        
     },
     {   id:"2",
-        color:"black"
+        color:"black",
+        description:"this is slide black"
+
     },
     {   id:"4",
-        color:"green"
+        color:"green",
+        description:"this is slide green"
     },
 ]
 

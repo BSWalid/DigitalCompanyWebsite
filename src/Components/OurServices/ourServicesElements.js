@@ -11,23 +11,17 @@ export const OurServicesWrapper = styled.section`
     width: 100%;
     background-color:#2D55B6 ;
     text-align: center;
+    display: flex;
+    flex-direction:column;
 
 
 `
-export const TitleWraper = styled.div`
 
-
-    top:50px;
-    width:200px;
-    margin: auto;
-    left: 50%;
-    position: absolute;
-
-`
 
 export const OurServiceTitle = styled.h1`
-   
+    
     font-size  :30px ;
+    margin-top: 20px;
     font-weight: bold;
     color: white;
 
@@ -67,27 +61,57 @@ export const Dot = styled.div`
 
 export const ServiceImageWrapper = styled.div`
 
-    height: 600px;
-    width: 700px;
-    position: absolute;
-    top: 20%;
-    right: 10%;
-    overflow: hidden;
-
+    height:500px;
+     width: 100%;
+   
 
 `
 export const ServiceContent = styled.div`
-z-index: 100;
-height: 400px;
-width: 400;
+    z-index: 100;
+    height: 400px;
+    width: 50%;
+    background-color: ${props => props.color };
 
 
 
-background-color: ${props => props.color };
 
 
 
 
 
 `
+
+
+export const ServiceContentWrapper = styled.div`
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    flex-wrap: wrap;
+
+`
+export const ServiceDescriptionWrapper = styled.div`
+  z-index: 100;
+    height: 400px;
+    width: 50%;
+    
+    text-align: center;
+    p{
+        color: white;
+    }
+   
+
+
+`
+export const ServiceDesceiption = styled.p`
+    
+    color: white;
+    height: 100px;
+    width: 100px;
+    z-index: 100;
+`
+
 
