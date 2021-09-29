@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export const OurServicesWrapper = styled.section`
 
     position: relative;
-    height: calc(100vh - 80px);;
+    height: calc(100vh - 80px);
     scroll-snap-align: end;
     margin-bottom:100px;
 

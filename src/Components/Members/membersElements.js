@@ -6,10 +6,9 @@ import styled  from "styled-components";
 export const MembersWrapper=styled.section`
 
     position: relative;
-    height: 800px;
+    height: calc(100vh - 80px);
     scroll-snap-align: end;
 
-    margin-bottom: 1000px;
     width: 100%;
     text-align: center;
 

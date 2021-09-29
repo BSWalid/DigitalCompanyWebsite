@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Components/Header'
 import OurServices from './Components/OurServices'
 import Members from './Components/Members'
+import OurPorjects from './Components/OurPorjects'
 
 
 
@@ -24,9 +25,9 @@ function App() {
     <Header/>
     <OurServices/>
 
-      <Members/>
-       {/* <OurPorject/>
-      <ContactUs/> */}
+    <Members/>
+    <OurPorjects/>
+     {/*  <ContactUs/> */}
      
     </div>
   );
